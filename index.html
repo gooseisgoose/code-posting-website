@@ -1,43 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <h1>Code Sharing Platform</h1>
-
-    <h2>Submit Your Code</h2>
-    <form id="codeForm">
-        <label for="code">Enter your code:</label><br>
-        <textarea id="code" name="code" rows="10" cols="50" required></textarea><br>
-        <button type="submit">Submit</button>
-    </form>
-
-    <h2>Shared Codes</h2>
-    <ul id="codeList"></ul>
-
-    <script>
-        document.getElementById('codeForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Get the code from the textarea
-            var code = document.getElementById('code').value;
-
-            // Create a new list item to display the code
-            var listItem = document.createElement('li');
-            listItem.textContent = code;
-
-            // Add the new list item to the code list
-            document.getElementById('codeList').appendChild(listItem);
-
-            // Clear the textarea
-            document.getElementById('code').value = '';
-        });
-    </script>
+    <header>
+        <h1>Code Sharing Platform</h1>
+    </header>
+    <div id="code-container">
+        <label for="username-input">Username:</label>
+        <input type="text" id="username-input">
+        <textarea id="code-input" placeholder="Enter your code here..."></textarea>
+        <button onclick="postCode()">Post Code</button>
+    </div>
+    <div id="code-output"></div>
+    <script src="script.js"></script>
 </body>
-
 </html>
